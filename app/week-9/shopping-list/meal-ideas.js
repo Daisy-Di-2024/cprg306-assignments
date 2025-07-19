@@ -3,11 +3,8 @@ import { useState, useEffect } from 'react';
 
 async function fetchMealIdeas(ingredient) {
   try {
-    console.log("startfetch");
     const response = await fetch(`https://www.themealdb.com/api/json/v1/1/filter.php?i=${ingredient}`);
     const data = await response.json();
-    console.log("endfetch");
-    console.log(data);
     return data;
   } catch (error) {
     console.error("Error", error);
